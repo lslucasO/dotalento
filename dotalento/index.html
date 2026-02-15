@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia do Talento — Estilo & Precisão desde 2020</title>
+    <meta name="description"
+        content="Barbearia do Talento — Cortes de cabelo com precisão cirúrgica, barba impecável e estilo único. Agende agora e transforme seu visual.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Particles Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Global Background Grid -->
+    <div class="global-bg-grid"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">
+            <img src="assets/logo.png" alt="Barbearia do Talento">
+        </div>
+        <div class="loader-bar">
+            <div class="loader-fill" id="loaderFill"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="assets/logo.png" alt="Barbearia do Talento" class="nav-logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link" data-text="Início">Início</a></li>
+                <li><a href="#sobre" class="nav-link" data-text="Sobre">Sobre</a></li>
+                <li><a href="#servicos" class="nav-link" data-text="Serviços">Serviços</a></li>
+                <li><a href="#precos" class="nav-link" data-text="Preços">Preços</a></li>
+                <li><a href="#horarios" class="nav-link" data-text="Horários">Horários</a></li>
+                <li><a href="#localizacao" class="nav-link" data-text="Local">Local</a></li>
+                <li><a href="#contato" class="nav-link nav-link-cta" data-text="Agendar">Agendar</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-orbital">
+            <div class="orbital-ring orbital-ring-1"></div>
+            <div class="orbital-ring orbital-ring-2"></div>
+            <div class="orbital-ring orbital-ring-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Desde 2020 — Precisão & Estilo</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line" data-scramble>BARBEARIA</span>
+                    <span class="title-line title-accent" data-scramble>DO TALENTO</span>
+                </h1>
+                <p class="hero-subtitle">Onde cada corte é uma obra de arte. Tecnologia, precisão e estilo se encontram
+                    para transformar seu visual.</p>
+                <div class="hero-cta-group">
+                    <a href="#contato" class="btn btn-primary">
+                        <span class="btn-text">Agendar Horário</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#servicos" class="btn btn-ghost">
+                        <span class="btn-text">Ver Serviços</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Anos de Experiência</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3000">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Clientes Atendidos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-suffix"></span>
+                        <span class="stat-label">Tipos de Serviços</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-glow"></div>
+                    <img src="assets/dono-foto-frente.png" alt="Barbeiro Profissional" class="hero-photo">
+                    <div class="hero-image-ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Role para baixo</span>
+        </div>
+    </section>
+
+    <!-- Sobre Section — Redesigned with larger photo -->
+    <section class="section sobre" id="sobre">
+        <div class="section-container">
+            <div class="sobre-grid">
+                <div class="sobre-image reveal-left">
+                    <div class="sobre-image-frame">
+                        <div class="sobre-frame-glow"></div>
+                        <img src="assets/dono-assinando-certificado.png" alt="Profissional Certificado"
+                            class="sobre-photo">
+                        <div class="frame-corner frame-corner-tl"></div>
+                        <div class="frame-corner frame-corner-tr"></div>
+                        <div class="frame-corner frame-corner-bl"></div>
+                        <div class="frame-corner frame-corner-br"></div>
+                        <!-- Animated border -->
+                        <div class="frame-border-anim"></div>
+                    </div>
+                    <div class="sobre-experience-badge">
+                        <span class="exp-number">5+</span>
+                        <span class="exp-text">anos de<br>experiência</span>
+                    </div>
+                    <div class="sobre-certified-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        <span>Certificado</span>
+                    </div>
+                </div>
+                <div class="sobre-content reveal-right">
+                    <div class="section-label">
+                        <span class="label-line"></span>
+                        <span>Quem Somos</span>
+                    </div>
+                    <h2 class="section-title">Mais do que uma barbearia,<br><span class="text-accent">uma
+                            experiência.</span></h2>
+                    <p class="sobre-text">A <strong>Barbearia do Talento</strong> nasceu em 2020 com uma missão clara:
+                        elevar o padrão de cortes masculinos na região. Cada detalhe do nosso trabalho reflete
+                        dedicação, técnica e um compromisso inabalável com a excelência.</p>
+                    <p class="sobre-text">Nosso profissional é certificado e está em constante evolução, trazendo as
+                        tendências mais modernas e as técnicas mais precisas para cada cliente que senta na cadeira.</p>
+                    <div class="sobre-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Profissional Certificado</h4>
+                                <p>Formação técnica e certificações reconhecidas</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Pontualidade</h4>
+                                <p>Respeito ao seu tempo com agendamento preciso</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Excelência</h4>
+                                <p>Cada corte é tratado como uma obra de arte</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section class="section servicos" id="servicos">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div class="section-label section-label-center">
+                    <span class="label-line"></span>
+                    <span>Nossos Serviços</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title section-title-center">Serviços que <span class="text-accent">transformam</span>
+                </h2>
+                <p class="section-desc">Do corte clássico social ao degradê mais ousado. Aqui, cada serviço é executado
+                    com precisão milimétrica.</p>
+            </div>
+            <div class="servicos-grid">
+                <div class="servico-card tilt-card reveal-up" data-delay="0">
+                    <div class="servico-card-inner">
+                        <div class="servico-icon-wrapper">
+                            <svg class="servico-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M6 3v18M18 3v18M6 12h12M6 6c3 0 4.5 2 6 2s3-2 6-2M6 18c3 0 4.5-2 6-2s3 2 6 2" />
+                            </svg>
+                        </div>
+                        <h3 class="servico-title">Cortes Masculinos</h3>
+                        <p class="servico-desc">Social, degradê, navalhado e infantil. Cada estilo com acabamento
+                            perfeito.</p>
+                        <div class="servico-price">A partir de <strong>R$ 20</strong></div>
+                        <div class="servico-card-glow"></div>
+                    </div>
+                </div>
+                <div class="servico-card tilt-card reveal-up" data-delay="100">
+                    <div class="servico-card-inner">
+                        <div class="servico-icon-wrapper">
+                            <svg class="servico-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                                <circle cx="9" cy="10" r="1" fill="currentColor" />
+                                <circle cx="15" cy="10" r="1" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3 class="servico-title">Barba & Cavanhaque</h3>
+                        <p class="servico-desc">Modelagem e acabamento na navalha para um visual impecável.</p>
+                        <div class="servico-price">A partir de <strong>R$ 35</strong></div>
+                        <div class="servico-card-glow"></div>
+                    </div>
+                </div>
+                <div class="servico-card tilt-card reveal-up" data-delay="200">
+                    <div class="servico-card-inner">
+                        <div class="servico-icon-wrapper">
+                            <svg class="servico-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <path
+                                    d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+                            </svg>
+                        </div>
+                        <h3 class="servico-title">Coloração</h3>
+                        <p class="servico-desc">Platinado, reflexo e luzes — técnicas avançadas para um visual único.
+                        </p>
+                        <div class="servico-price">A partir de <strong>R$ 60</strong></div>
+                        <div class="servico-card-glow"></div>
+                    </div>
+                </div>
+                <div class="servico-card tilt-card reveal-up" data-delay="300">
+                    <div class="servico-card-inner">
+                        <div class="servico-icon-wrapper">
+                            <svg class="servico-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3 class="servico-title">Serviços Especiais</h3>
+                        <p class="servico-desc">Pigmentação, combos exclusivos e tratamentos diferenciados.</p>
+                        <div class="servico-price">A partir de <strong>R$ 40</strong></div>
+                        <div class="servico-card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preços Section — Redesigned with category cards -->
+    <section class="section precos" id="precos">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div class="section-label section-label-center">
+                    <span class="label-line"></span>
+                    <span>Tabela de Valores</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title section-title-center">Investimento no seu <span
+                        class="text-accent">estilo</span></h2>
+                <p class="section-desc">Qualidade premium, preço justo. Escolha o serviço ideal para o seu visual.</p>
+            </div>
+            <div class="precos-categories">
+                <!-- Category 1: Cortes -->
+                <div class="preco-category-card reveal-up" data-delay="0">
+                    <div class="preco-cat-header">
+                        <div class="preco-cat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M6 3v18M18 3v18M6 12h12M6 6c3 0 4.5 2 6 2s3-2 6-2M6 18c3 0 4.5-2 6-2s3 2 6 2" />
+                            </svg>
+                        </div>
+                        <h3>Cortes</h3>
+                        <div class="preco-cat-line"></div>
+                    </div>
+                    <div class="preco-cat-items">
+                        <div class="preco-item">
+                            <span class="preco-item-name">Corte Navalhado</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 27</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Degradê</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 25</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Corte Social</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 20</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Corte Infantil</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 25</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Corte Feminino</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Coloração -->
+                <div class="preco-category-card preco-cat-featured reveal-up" data-delay="150">
+                    <div class="preco-cat-badge">Mais Popular</div>
+                    <div class="preco-cat-header">
+                        <div class="preco-cat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="5" />
+                                <path
+                                    d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+                            </svg>
+                        </div>
+                        <h3>Coloração & Premium</h3>
+                        <div class="preco-cat-line"></div>
+                    </div>
+                    <div class="preco-cat-items">
+                        <div class="preco-item">
+                            <span class="preco-item-name">Platinado</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value preco-highlight">R$ 80</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Reflexo</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value preco-highlight">R$ 70</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Luzes</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value preco-highlight">R$ 60</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Pigmentação</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 40</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Combos -->
+                <div class="preco-category-card reveal-up" data-delay="300">
+                    <div class="preco-cat-header">
+                        <div class="preco-cat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3>Combos</h3>
+                        <div class="preco-cat-line"></div>
+                    </div>
+                    <div class="preco-cat-items">
+                        <div class="preco-item">
+                            <span class="preco-item-name">Corte + Barba</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 40</span>
+                        </div>
+                        <div class="preco-item">
+                            <span class="preco-item-name">Corte + Cavanhaque</span>
+                            <span class="preco-item-dots"></span>
+                            <span class="preco-item-value">R$ 35</span>
+                        </div>
+                    </div>
+                    <div class="preco-cat-cta">
+                        <a href="#contato" class="btn btn-ghost btn-sm">Agendar Combo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horários Section — Weekly Schedule -->
+    <section class="section horarios" id="horarios">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div class="section-label section-label-center">
+                    <span class="label-line"></span>
+                    <span>Cronograma</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title section-title-center">Funcionamento da <span class="text-accent">semana</span>
+                </h2>
+                <p class="section-desc">Planeje sua visita. Confira nossos horários e garanta o melhor atendimento.</p>
+            </div>
+            <div class="horarios-grid">
+                <div class="horario-card reveal-up" data-delay="0" data-day="seg">
+                    <div class="horario-day">Seg</div>
+                    <div class="horario-name">Segunda</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time">09:00</div>
+                    <div class="horario-separator">às</div>
+                    <div class="horario-time">20:00</div>
+                    <div class="horario-status horario-open">
+                        <span class="status-dot"></span>Aberto
+                    </div>
+                </div>
+                <div class="horario-card reveal-up" data-delay="50" data-day="ter">
+                    <div class="horario-day">Ter</div>
+                    <div class="horario-name">Terça</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time">09:00</div>
+                    <div class="horario-separator">às</div>
+                    <div class="horario-time">20:00</div>
+                    <div class="horario-status horario-open">
+                        <span class="status-dot"></span>Aberto
+                    </div>
+                </div>
+                <div class="horario-card reveal-up" data-delay="100" data-day="qua">
+                    <div class="horario-day">Qua</div>
+                    <div class="horario-name">Quarta</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time">09:00</div>
+                    <div class="horario-separator">às</div>
+                    <div class="horario-time">20:00</div>
+                    <div class="horario-status horario-open">
+                        <span class="status-dot"></span>Aberto
+                    </div>
+                </div>
+                <div class="horario-card reveal-up" data-delay="150" data-day="qui">
+                    <div class="horario-day">Qui</div>
+                    <div class="horario-name">Quinta</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time">09:00</div>
+                    <div class="horario-separator">às</div>
+                    <div class="horario-time">20:00</div>
+                    <div class="horario-status horario-open">
+                        <span class="status-dot"></span>Aberto
+                    </div>
+                </div>
+                <div class="horario-card reveal-up" data-delay="200" data-day="sex">
+                    <div class="horario-day">Sex</div>
+                    <div class="horario-name">Sexta</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time">09:00</div>
+                    <div class="horario-separator">às</div>
+                    <div class="horario-time">21:00</div>
+                    <div class="horario-status horario-open">
+                        <span class="status-dot"></span>Aberto
+                    </div>
+                </div>
+                <div class="horario-card reveal-up" data-delay="250" data-day="sab">
+                    <div class="horario-day">Sáb</div>
+                    <div class="horario-name">Sábado</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time">08:00</div>
+                    <div class="horario-separator">às</div>
+                    <div class="horario-time">18:00</div>
+                    <div class="horario-status horario-open">
+                        <span class="status-dot"></span>Aberto
+                    </div>
+                </div>
+                <div class="horario-card horario-closed reveal-up" data-delay="300" data-day="dom">
+                    <div class="horario-day">Dom</div>
+                    <div class="horario-name">Domingo</div>
+                    <div class="horario-divider"></div>
+                    <div class="horario-time-off">Fechado</div>
+                    <div class="horario-status horario-off">
+                        <span class="status-dot"></span>Descanso
+                    </div>
+                </div>
+            </div>
+            <div class="horarios-note reveal-up" data-delay="350">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4M12 8h.01" />
+                </svg>
+                <span>Horários especiais em feriados. Consulte pelo WhatsApp.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="section depoimentos" id="depoimentos">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div class="section-label section-label-center">
+                    <span class="label-line"></span>
+                    <span>Depoimentos</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title section-title-center">O que nossos clientes <span
+                        class="text-accent">dizem</span></h2>
+            </div>
+            <div class="depoimentos-track">
+                <div class="depoimento-card reveal-up" data-delay="0">
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-text">"Melhor barbearia da região, sem dúvida! Sempre saio de lá me sentindo
+                        outro. O degradê fica impecável toda vez."</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">RL</div>
+                        <div>
+                            <strong>Rafael Lima</strong>
+                            <span>Cliente desde 2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card reveal-up" data-delay="100">
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-text">"Profissionalismo de verdade. O cara entende do assunto e faz o corte
+                        exatamente como você quer. Recomendo demais!"</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">MS</div>
+                        <div>
+                            <strong>Marcos Santos</strong>
+                            <span>Cliente desde 2020</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card reveal-up" data-delay="200">
+                    <div class="depoimento-stars">★★★★★</div>
+                    <p class="depoimento-text">"Fiz o platinado lá e ficou perfeito! O ambiente é dahora e o atendimento
+                        é nota 10. Virei cliente fiel."</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar">GP</div>
+                        <div>
+                            <strong>Gabriel Pereira</strong>
+                            <span>Cliente desde 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização Section — NEW -->
+    <section class="section localizacao" id="localizacao">
+        <div class="section-container">
+            <div class="section-header reveal-up">
+                <div class="section-label section-label-center">
+                    <span class="label-line"></span>
+                    <span>Localização</span>
+                    <span class="label-line"></span>
+                </div>
+                <h2 class="section-title section-title-center">Fácil de <span class="text-accent">encontrar</span></h2>
+            </div>
+            <div class="localizacao-grid">
+                <div class="localizacao-map-wrapper reveal-left">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197577579626!2d-46.65860432375846!3d-23.56134956159265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1707960000000!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%"
+                            style="border:0; filter: grayscale(100%) invert(90%) contrast(80%);" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="localizacao-info reveal-right">
+                    <div class="loc-info-card">
+                        <div class="loc-info-item">
+                            <div class="loc-info-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Rua estrada da luz 1055B, proximo a lotérica.<br>Jaboatão dos Guararapes — Pernambuco</p>
+                            </div>
+                        </div>
+                        <div class="loc-info-item">
+                            <div class="loc-info-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Referência</h4>
+                                <p>Próximo ao ponto de referência local</p>
+                            </div>
+                        </div>
+                        <div class="loc-info-item">
+                            <div class="loc-info-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Atendimento</h4>
+                                <p>Seg a Sáb — Com agendamento<br>Encaixes sujeitos a disponibilidade</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-primary loc-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span class="btn-text">Abrir no Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="section contato" id="contato">
+        <div class="section-container">
+            <div class="contato-grid">
+                <div class="contato-info reveal-left">
+                    <div class="section-label">
+                        <span class="label-line"></span>
+                        <span>Contato</span>
+                    </div>
+                    <h2 class="section-title">Pronto para <span class="text-accent">transformar</span> seu visual?</h2>
+                    <p class="contato-desc">Agende seu horário agora mesmo pelo WhatsApp e garanta o melhor atendimento.
+                    </p>
+                    <div class="contato-details">
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Localização</strong>
+                                <p>Sua cidade, seu bairro</p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Horário de Funcionamento</strong>
+                                <p>Seg a Sáb — 09:00 às 20:00</p>
+                            </div>
+                        </div>
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>(00) 00000-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contato-cta reveal-right">
+                    <div class="cta-card">
+                        <div class="cta-card-bg"></div>
+                        <img src="assets/logo.png" alt="Barbearia do Talento" class="cta-logo">
+                        <h3>Agende pelo WhatsApp</h3>
+                        <p>Clique no botão abaixo e fale diretamente conosco. Atendimento rápido e personalizado.</p>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            <span>Chamar no WhatsApp</span>
+                        </a>
+                        <div class="cta-card-particles">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="Barbearia do Talento" class="footer-logo">
+                    <p>Elevando o padrão de cortes masculinos desde 2020.</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#servicos">Cortes</a></li>
+                        <li><a href="#servicos">Barba</a></li>
+                        <li><a href="#servicos">Coloração</a></li>
+                        <li><a href="#servicos">Especiais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/5500000000000" target="_blank" class="social-icon" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Barbearia do Talento. Todos os direitos reservados.</p>
+                <p class="footer-credit">Site de demonstração</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
